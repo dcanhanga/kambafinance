@@ -1,7 +1,23 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-size: 1rem;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
 }
+:root {
+    
+  --gray-200: #f0f2f5;
+  --gray-700: #363f5f;
+  --green-200: #3dd705;
+  --green-700: #2d4a22;
 
+  --bg-header: var(--green-700);
+  --bg-color: var(--gray-200);
+}
+html {
+  font-size: 93.75%;
+}
+body {
+  background-color: var(--bg-color);
+  font-family: "Poppins", sans-serif;
+}
