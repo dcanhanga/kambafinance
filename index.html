@@ -6,20 +6,78 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <title>Kamba🪙finance💲</title>
-    <link rel="apple-touch-icon"sizes="180x180" href="./assets/img/favicon/apple-touch-icon.png" >
-    <link  rel="icon" type="image/png"sizes="32x32" href="./assets/img/favicon/favicon-32x32.png" >
+    <title>Kambafinance</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicon/apple-touch-icon.png" >
+    <link  rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png" >
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png" >
     <link rel="manifest" href="/site.webmanifest" >
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/styles/styles.css">
   </head>
-  <body">
+  <body>
     <header id="header">
+       <div id="switch-container">
+        <input type="checkbox"  id="inSwitch">
+        <label for="inSwitch"><span class="circle"></span></label>
+      </div>
         <h1 id="title">
             <img src="./assets/img/logo.svg" alt="Logo Kamba finance" id="logo">
-            <span class="srOnly">Kamba finance</span>
+            <span class="sr-only">Kamba finance</span>
         </h1>
     </header>
+     <main class="container">
+    <section id="balance">
+      <h2 class="sr-only">Balanço</h2>
+      <div class="card">
+        <h3><span>Entradas</span>
+        <img src="./assets/img/income.svg" alt="Entradas" ></h3>
+        <p>5.000,00 KZ</p>
+      </div>
+      <div class="card">
+        <h3><span>Saídas</span> <img src="./assets/img/expense.svg" alt="Saídas" ></h3>
+        <p>3.000,00</p>
+      </div>
+      <div class="card total">
+        <h3><span>Total</span> <img src="./assets/img/total.svg" alt="Total" ></h3>
+        <p>2.000,00</p>
+      </div>
+    </section>
+    <section id="transaction">
+      <h2 class="sr-only">Transações</h2>
+      <a href="#" class="button new">+ Nova transação</a>
+      <table id="data-table">
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Data</th>
+            <th></th>
+          </tr>
+        </thead>    
+        <tbody>
+          <tr>
+            <td class="description">Luz</td>
+            <td class="expense">-500,00 KZ</td>
+            <td class="date">23/12/2022</td>
+            <td><img src="./assets/img/minus.svg" alt="remover transação"/></td>
+          </tr>
+          <tr>
+            <td class="description">Crianção de web Site</td>
+            <td class="income">12.000,00 KZ</td>
+            <td class="date">23/12/2022</td>
+             <td><img src="./assets/img/minus.svg" alt="remover transação"/></td>
+          </tr>
+          <tr>
+            <td class="description">Aluguel</td>
+            <td class="expense">6.000,00 KZ</td>
+            <td class="date">23/12/2022</td>
+             <td><img src="./assets/img/minus.svg" alt="remover transação"/></td>
+          </tr>
+        </tbody>
+      </table>
+      domingos canhanga
+    </section>
+  </main>
+  <script src="./assets/js/scripts.js"></script> 
   </body>
 </html>

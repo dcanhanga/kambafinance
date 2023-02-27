@@ -1,7 +1,8 @@
 #header{
-    background-color: var(--green-700);
+    background-color: var(--bg-header);
     padding: 2rem 0 10rem;
     text-align: center;
+    transition: background 0.2s linear;
 }
 #title{
     display: flex;

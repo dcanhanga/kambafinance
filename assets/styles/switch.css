@@ -1,0 +1,56 @@
+#switch-container {
+  position: absolute;
+  right: 1rem
+}
+input#inSwitch {
+  display: none;
+}
+#switch-container label {
+  display: block;
+  width: 40px;
+  height: 20px;
+  background-color: rgba(211, 211, 211, 0.322);
+  border-radius: 10px;
+  cursor: pointer;
+}
+input#inSwitch:checked+ label{
+  background-color: tomato;
+}
+.circle {
+  width: 17px;
+  background-color: white;
+  height: 17px;
+  border-radius: 50%;
+  top: 1.5px;
+  position: absolute;
+  left: 1.5px;
+}
+input#inSwitch + label .circle{
+    animation: moveLeft 0.2s;
+}
+input#inSwitch:checked + label .circle {
+    animation: moveRight 0.2s forwards;
+  background-color: black;
+}
+@keyframes moveRight{
+     to{
+        right: 20px;
+        transform:  translateX(20px);
+       
+    }
+    from{
+        left: 3px;
+        transform:  translateX(1.5px);
+    }
+}
+@keyframes moveLeft{
+     to{
+        left: 3px;
+        transform:  translateX(1.5px);
+       
+    }
+    from{
+        right: 20px;
+        transform:  translateX(20px);
+    }
+}

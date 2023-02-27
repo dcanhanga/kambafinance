@@ -7,12 +7,15 @@
 :root {
     
   --gray-200: #f0f2f5;
+  --gray-900:#1A1A1A;
+  --gray-800: #2b2b2b;
   --gray-700: #363f5f;
   --green-200: #3dd705;
   --green-700: #2d4a22;
 
   --bg-header: var(--green-700);
   --bg-color: var(--gray-200);
+  --text-color: var(--gray-700);
 }
 html {
   font-size: 93.75%;
@@ -20,4 +23,20 @@ html {
 body {
   background-color: var(--bg-color);
   font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  transition: background 0.2s linear;
+}
+.container{
+  margin: 0 auto;
+  width: min(90vw, 800px);
+}
+
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1;
+  overflow: hidden;
+  clip: rect(0, 0, 0);
 }
