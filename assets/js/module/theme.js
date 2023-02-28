@@ -1,18 +1,20 @@
-
-
 export default function theme(){
     const inSwitch = document.querySelector("#inSwitch")
     const rootElement = document.documentElement
     window.onload = getThemeFromLocaleStorage
     const lightTheme = {
       "--bg-header": "var(--green-700)",
-      "--bg-color": "var(--gray-200)",
-      "--text-color": "var(--gray-700)",
+      "--bg-body": "var(--gray-200)",
+      "--text-color": "var(--blue-700)",
+      "--card-bg": "var(--white)",
+      "--card-bg-total": "var(--green-400)",
     }
     const darkTheme = {
       "--bg-header": "var(--gray-800)",
-      "--bg-color": "var(--gray-900)",
-      "--text-color": "var(--gray-700)",
+      "--bg-body": "var(--gray-600)",
+      "--text-color": "var(--gray-100)",
+      "--card-bg": "var(--gray-900)",
+      "--card-bg-total": "var(--green-200)",
     }
     function changeTheme(theme) {
       for (let prop in theme) {
@@ -38,7 +40,6 @@ export default function theme(){
       }
       return true
     }
-
     inSwitch.addEventListener("change", function () {
       const isChecked = inSwitch.checked
       isChecked ? changeTheme(darkTheme) : changeTheme(lightTheme)
