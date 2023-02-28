@@ -8,6 +8,7 @@ export default function theme(){
       "--text-color": "var(--blue-700)",
       "--card-bg": "var(--white)",
       "--card-bg-total": "var(--green-400)",
+      "--bg-table-content": "var(--white)",
     }
     const darkTheme = {
       "--bg-header": "var(--gray-800)",
@@ -15,6 +16,7 @@ export default function theme(){
       "--text-color": "var(--gray-100)",
       "--card-bg": "var(--gray-900)",
       "--card-bg-total": "var(--green-200)",
+      "--bg-table-content": "var(--gray-900)",
     }
     function changeTheme(theme) {
       for (let prop in theme) {

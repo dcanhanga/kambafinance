@@ -28,3 +28,10 @@
   line-height: 3rem;
   margin-top: 1rem;
 }
+@media (min-width:800px){
+ #balance{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+}

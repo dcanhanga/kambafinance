@@ -24,6 +24,7 @@
   --text-color: var(--blue-700);
   --card-bg: var(--white);
   --card-bg-total: var(--green-400);
+  --bg-table-content: var(--white);
 }
 html {
   font-size: 93.75%;
@@ -47,4 +48,14 @@ body {
   margin: -1;
   overflow: hidden;
   clip: rect(0, 0, 0);
+}
+@media (min-width:800px){
+  html{
+    font-size: 87.5%;
+  }
+  #balance{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
 }
