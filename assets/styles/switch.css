@@ -14,7 +14,7 @@ input#inSwitch {
   cursor: pointer;
 }
 input#inSwitch:checked+ label{
-  background-color: tomato;
+  background-color: #e92929;
 }
 .circle {
   width: 17px;

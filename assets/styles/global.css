@@ -7,7 +7,7 @@
 :root {
   --white: #fff;
   --gray-100: #e1e1e6;
-  --gray-200: #f0f2f5;
+  --gray-200:#f0f2f5;
   --gray-300: #c4c4cc;
   --gray-400: #8d8d99;
   --gray-600: #323238;
@@ -35,9 +35,12 @@ body {
   color: var(--text-color);
   transition: background 0.2s linear;
 }
+a{
+  text-decoration: none;
+}
 .container {
   margin: 0 auto;
-  width: min(90vw, 800px);
+  width: min(90vw, 850px);
 }
 
 .sr-only {
@@ -52,10 +55,5 @@ body {
 @media (min-width:800px){
   html{
     font-size: 87.5%;
-  }
-  #balance{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
   }
 }

@@ -8,6 +8,7 @@
   border-radius: 0.25rem;
   margin-bottom: 2rem;
   color: var(--text-color); 
+  box-shadow: 2 2 2 red;
 }
 .card.total{
   background: var(--card-bg-total);
