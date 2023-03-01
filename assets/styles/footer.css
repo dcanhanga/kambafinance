@@ -1,0 +1,81 @@
+footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+address{
+  font-style: normal;
+}
+
+footer p{
+  text-align: center;
+  padding: 4rem 0 2rem;
+  color:var(--text-color);
+  opacity: 0.8;
+  font-size:1.2rem;
+}
+.bar{
+  font-style:normal;
+  font-size:1.5rem;
+  height:20px;
+  position:relative;
+  top:5px;
+  width:3px;
+  background:var(--text-color);
+  display:inline-block;
+}
+.kambadev {
+  font-weight:bold;
+  font-size:1.2rem;
+  font-style: oblique;
+}
+
+.social-links{
+  display: flex;
+  justify-content: space-around;  
+}
+.social-links a{
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid white;
+}
+.social-links a i {
+font-size: 1.8rem;
+}
+.social-links a:hover i {
+color: white;
+}
+.social-links a.call{
+   color: var(--green-200);
+}
+.social-links a.call:hover{
+   background-color: var(--green-200);
+}
+.social-links a.whatsapp{
+  color: #34af23;
+}
+.social-links a.whatsapp:hover{
+  background-color: #34af23;
+}
+.social-links a.linkedin {
+  color: #0e76a8 ;
+}
+.social-links a.linkedin:hover{
+  background-color: #0e76a8 ;
+}
+.social-links a.github{
+  color:  #171515 ;
+}
+.social-links a.github:hover{
+  background-color:  #171515;
+}
+.social-links a,.social-links a i, .social-links a:hover i,
+.social-links a.call,.social-links a.call:hover,
+.social-links a.whatsapp,.social-links a.whatsapp:hover,
+.social-links a.linkedin, .social-links a.linkedin:hover,
+.social-links a.github, .social-links a.github:hover
+{
+  transition:.6s linear;
+}
