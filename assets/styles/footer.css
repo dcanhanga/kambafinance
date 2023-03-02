@@ -44,8 +44,39 @@ footer p{
 .social-links a i {
 font-size: 1.8rem;
 }
-.social-links a:hover i {
+.social-links a{
+  color: var(--white);
+}
+.social-links a.call{
+   background-color: var(--green-200);
+}
+.social-links a.whatsapp{
+  background-color: #34af23;
+}
+.social-links a.linkedin {
+  background-color: #0e76a8 ;
+}
+.social-links a.github{
+  background-color:  #171515 ;
+}
+.social-links a,.social-links a i, .social-links a:hover i,
+.social-links a.call,.social-links a.call:hover,
+.social-links a.whatsapp,.social-links a.whatsapp:hover,
+.social-links a.linkedin, .social-links a.linkedin:hover,
+.social-links a.github, .social-links a.github:hover
+{
+  transition:.6s linear;
+}
+@media (min-width:800px){
+  .social-links a:hover i {
 color: white;
+}
+.social-links a.call,
+.social-links a.whatsapp,
+.social-links a.linkedin, 
+.social-links a.github
+{
+  background-color: transparent;
 }
 .social-links a.call{
    color: var(--green-200);
@@ -71,11 +102,4 @@ color: white;
 .social-links a.github:hover{
   background-color:  #171515;
 }
-.social-links a,.social-links a i, .social-links a:hover i,
-.social-links a.call,.social-links a.call:hover,
-.social-links a.whatsapp,.social-links a.whatsapp:hover,
-.social-links a.linkedin, .social-links a.linkedin:hover,
-.social-links a.github, .social-links a.github:hover
-{
-  transition:.6s linear;
 }
