@@ -1,58 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-AO">
-  <head>
-    <meta charset="UTF-8" >
-    <link rel="preconnect" href="https://fonts.googleapis.com" >
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <title>Kamba.finance.AOA</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicon/apple-touch-icon.png" >
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png" >
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png" >
-    <link rel="manifest" href="/site.webmanifest" >
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet" >
-     <script src="https://unpkg.com/phosphor-icons"></script>
-    <link rel="stylesheet" href="./assets/styles/styles.css" >
-  </head>
-  <body>
-    <header id="header">
-      <h1 id="title">
-        <img src="./assets/img/logo.svg" alt="Logo Kamba finance" id="logo" >
-        <span class="sr-only">Kamba finance</span>
-      </h1>
-    </header>
-    <main class="container">
-      <section id="balance">
-        <h2 class="sr-only">Balanço</h2>
-        <div class="card">
-          <h3>
-            <span>Entradas</span>
-            <img src="./assets/img/income.svg" alt="Entradas" >
-          </h3>
-          <p>5.000,00 KZ</p>
-        </div>
-        <div class="card">
-          <h3>
-            <span>Saídas</span>
-            <img src="./assets/img/expense.svg" alt="Saídas" >
-          </h3>
-          <p>3.000,00</p>
-        </div>
-        <div class="card total">
-          <h3>
-            <span>Total</span> <img src="./assets/img/total.svg" alt="Total" >
-          </h3>
-          <p>2.000,00</p>
-        </div>
-      </section>
 
-      <section id="transaction">
-        <h2 class="sr-only">Transações</h2>
-        <p class="new-transaction" title="Inserir uma nova transação" data-modal="open">
-          + Nova transação
-        </p>
-        <table id="data-table">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kamba.finance.AOA</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/phosphor-icons"></script>
+  <link rel="stylesheet" href="./assets/styles/styles.css">
+</head>
+
+<body class="light">
+  <header class="header" data-header>
+    <div id="switch-container" title="alterar o tema para o modo dark">
+      <div class="box data-box">
+        <span class="circle front">
+        </span><span class="circle back"></span>
+      </div>
+    </div>
+    <h1 class="title">Kamba Finance<img src="./assets/img/logo.svg" alt="Logo da Kamba Finance"></h1>
+  </header>
+  <main class="container">
+    <section class="balance">
+      <h2 class="sr-only">Balanço </h2>
+      <div class="card">
+        <h3><span>Entradas</span><img src="./assets/img/income.svg" alt="imagem de entrada"></h3>
+        <p>150 000,00 Kz</p>
+      </div>
+      <div class="card">
+        <h3><span>Saídas</span><img src="./assets/img/expense.svg" alt="imagem de saídas"></h3>
+        <p>50 000,00 Kz</p>
+      </div>
+      <div class="card total">
+        <h3><span>Total</span><img src="./assets/img/total.svg" alt="imagem de total"></h3>
+        <p>100 000,00 Kz</p>
+      </div>
+    </section>
+    <section class="transactions">
+      <h2 class="sr-only">Transações</h2>
+      <label for="new-transaction" class="sr-only">Nova Transação</label>
+      <button id="new-transaction" data-modal="open">+ Nova Transação</button>
+      <div class="transactions-table-container">
+        <table class="transactions-table">
           <thead>
             <tr>
               <th>Descrição</th>
@@ -63,105 +61,78 @@
           </thead>
           <tbody>
             <tr>
-              <td class="description">Luz</td>
-              <td class="expense">-500,00 KZ</td>
-              <td class="date">23/12/2022</td>
-              <td>
-                <img src="./assets/img/minus.svg" alt="remover transação" class="delete">
-              </td>
+              <td>Crianção de WebSite</td>
+              <td class="income">150 000,00 Kz</td>
+              <td>12/09/03</td>
+              <td><img src="./assets/img/minus.svg" alt="Remover transação" title="Remover transação"></td>
             </tr>
             <tr>
-              <td class="description">Crianção de web Site</td>
-              <td class="income">12.000,00 KZ</td>
-              <td class="date">23/12/2022</td>
-              <td>
-                <img src="./assets/img/minus.svg" alt="remover transação" class="delete" >
-              </td>
+              <td>Internet</td>
+              <td class="expense">27 000,00 Kz</td>
+              <td>15/09/03</td>
+              <td><img src="./assets/img/minus.svg" alt="Remover transação" title="Remover transação"></td>
             </tr>
             <tr>
-              <td class="description">Aluguel</td>
-              <td class="expense">6.000,00 KZ</td>
-              <td class="date">23/12/2022</td>
-              <td>
-                <img src="./assets/img/minus.svg" alt="remover transação" class="delete" >
-              </td>
+              <td>Agua</td>
+              <td class="expense">10 000,00 Kz</td>
+              <td>15/09/03</td>
+              <td><img src="./assets/img/minus.svg" alt="Remover transação" title="Remover transação"></td>
+            </tr>
+            <tr>
+              <td>Energia</td>
+              <td class="expense">13 000,00 Kz</td>
+              <td>15/09/03</td>
+              <td><img src="./assets/img/minus.svg" alt="Remover transação" title="Remover transação"></td>
             </tr>
           </tbody>
         </table>
-      </section>
-    </main>
-    <div class="modal-overlay" data-modal="modal">
-      <div class="modal">
-        <section id="form">
-          <h2>Nova transação</h2>
-          <form>
-            <div class="input-group">
-              <label for="description" class="sr-only">Discrição</label>
-              <input
-                type="text"
-                id="description"
-                name="description"
-                placeholder="Descrição"
-                required
-              >
-            </div>
-            <div class="input-group">
-              <label for="amount" class="sr-only">Montante</label>
-              <input
-                type="number"
-                id="amount"
-                name="amount"
-                placeholder="0,00 Kz"
-                step="0.01"
-                required
-              >
-              <small class="help">
-                Use o sinal -(negativo) para despesas e ,(virgula) para casas
-                decimais
-              </small>
-            </div>
-            <div class="input-group">
-              <label for="date" class="sr-only">Discrição</label>
-              <input type="date" id="date" name="date" required>
-            </div>
-            <div class="input-group actions">
-              <span class="button cancel" data-modal="close">Cancelar</span>
-              <button type="submit">Salvar</button>
-            </div>
-          </form>
-        </section>
       </div>
-    </div>
-    <footer class="container">
-      <address>
-       <p>Domingos Canhanga <span class="bar"></span> +244 949 425 971 <span class="bar"></span> <span class="kambadev">&lt;Kambadev /&gt;</span></p>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/canhanga3d/" 
-            class="linkedin"
-            target="_blank"
-            title="Visitar o perfil do LinkedIn de Domingos Canhanga">
-            <i class="ph-linkedin-logo"></i>
-          </a>
-          <a href="https://github.com/dcanhanga3d" 
-            class="github"
-            target="_blank" 
-            title="Visitar o perfil do GitHub de Domingos Canhanga">
-            <i class="ph-github-logo gitHub"></i>
-          </a>
-          <a href="tel:+244949425971" 
-            class="call"
-            title="Ligar para o celular de Domingos Canhanga">
-            <i class="ph-phone-outgoing"></i>
-          </a>
-          <a href="https://wa.me/+244949425971" 
-            class="whatsapp"
-            target="_blank" 
-            title="Enviar uma mensagem no WhatsApp de Domingos Canhanga">
-            <i class="ph-whatsapp-logo"></i>
-          </a>
+    </section>
+  </main>
+  <dialog class="modal" data-modal="modal">
+    <div class="modal-container">
+      <h2>Nova Transação</h2>
+      <form>
+        <div class="input-group">
+          <label for="description" class="sr-only">Descrição</label>
+          <input type="text" 
+            placeholder="Descrição da transação" 
+            required id="description" 
+            data-form="description">
         </div>
-      </address>
-    </footer>
-    <script src="./assets/js/script.js" type="module"></script>
-  </body>
+        <div class="input-group">
+          <label for="amount" class="sr-only">Valor</label>
+          <input type="number" 
+            placeholder="Valor da transação, use o sinal (-) para despesas" 
+            required id="amount"
+            data-form="amount" 
+            step="0.5">
+          <em>Use o sinal - (negativo) para despesas e ,use a (virgula) para as casas decimais</em>
+        </div>
+        <div class="input-group">
+          <label for="date" class="sr-only">Data</label>
+          <input type="date" 
+            required 
+            id="date"  
+            data-form="date">
+        </div>
+        <div class="input-buttons">
+          <span class="cancel" title="Cancelar" data-modal="close">Cancelar</span>
+          <button type="submit">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+  <footer class="container">
+    <address>
+      <div class="contact">
+        
+      </div>
+    </address>
+    <p class="kambadev">&lt;Kambabev /&gt;</p>
+  </footer>
+  <script src="./assets/js/theme.js"></script>
+  <script src="./assets/js/script.js" type="module"></script>
+</body>
+
 </html>

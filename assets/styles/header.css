@@ -1,16 +1,11 @@
-#header{
-    background-color: var(--bg-header);
-    padding: 2rem 0 10rem;
-    text-align: center;
-    transition: background 0.2s linear;
-}
-#title{
+.header{
     display: flex;
-     align-items: center;
-     justify-content: center; 
-     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-header);
+    transition: background-color 600ms ease-in-out;
 }
-header #logo{
-  color:#fff;
-  font-weight: 100;
+.header .title{
+    padding: 1.875rem 0px 9.375rem;
+    font-size: 0px;
 }

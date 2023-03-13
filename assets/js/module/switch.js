@@ -1,20 +1,19 @@
-export default function $Switch() {
+export default function $switch() {
   const $Switch = {
-    $header: document.querySelector("#header"),
+    $header: document.querySelector("[data-header]"),
     createDiv() {
-      const div = document.createElement("div")
-      div.setAttribute("id", "switch-container")
-      $Switch.$header.prepend(div)
-      div.innerHTML = $Switch.divContent()
+      const div = document.createElement("div");
+      div.setAttribute("id", "switch-container");
+      $Switch.$header.prepend(div);
+      div.innerHTML = $Switch.divContent();
     },
     divContent() {
       const content = `
-      <input type="checkbox"  id="inSwitch">
-        <label for="inSwitch"><span class="circle"></span></label>
-      `
-      return content
+      <div class="box data-box">
+      <span class="circle front">
+      </span><span class="circle back"></span></div>`;
+      return content;
     },
-  }
-  $Switch.createDiv()
+  };
+  $Switch.createDiv();
 }
-  

@@ -1,0 +1,48 @@
+export default function initApp() {
+  const transactions = [];
+
+  const form = {
+    inputDescription: document.querySelector("[data-transaction='description']"),
+    inputAmount: document.querySelector("[data-transaction='amount']"),
+    inputDate: document.querySelector("[data-transaction='date']"),
+    inForm: document.querySelector("[data-form='form']"),
+    modal: document.querySelector("[data-modal='modal']"),
+    getValue() {
+      const newTransaction = {
+        id: transactions.length + 1,
+        description: this.inputDescription.value,
+        amount: this.inputAmount.value,
+        date: this.inputDate.value,
+      };
+      transactions.push(newTransaction);
+      this.saveInLocalStorage(transactions);
+    },
+    saveInLocalStorage(transactions) {
+      localStorage.setItem('transactions', JSON.stringify(transactions));
+    },
+    closeModal() {
+      this.modal.classList.remove('active');
+    },
+  };
+
+   // Adiciona as transações salvas no localStorage ao array transactions
+  const savedTransactions = form.getValueFromLocalStorage();
+  if (savedTransactions.length > 0) {
+    transactions = savedTransactions;
+  }
+
+  function renderTransactions() {
+    // renderiza as transações no HTML
+  }
+
+  form.inForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    form.getValue();
+    form.closeModal();
+    renderTransactions();
+  });
+
+  form.getValueFromLocalStorage = () => {
+    return JSON.parse(localStorage.getItem('transactions')) || [];
+  };
+}

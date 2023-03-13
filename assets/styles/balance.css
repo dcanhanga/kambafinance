@@ -1,38 +1,37 @@
-#balance {
-  color: #fff;
-  margin-top: -8rem;
+.balance {
+  margin-top: -7rem;
 }
-.card{
-  background:var(--card-bg);
-  padding: 1.5rem 2rem;
-  border-radius: 0.25rem;
-  margin-bottom: 2rem;
-  color: var(--text-color); 
-  box-shadow: 2 2 2 red;
+.card {
+  /*--box-shadow: ;*/
+  background-color: var(--bg-card);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 1.875rem;
+  padding: 1.40625rem 1.875rem;
+  transition: background-color 600ms ease-in-out;
 }
 .card.total{
-  background: var(--card-bg-total);
-  color: #fff;
+    background: var(--green-200);
+    box-shadow: var(--box-shadow-total);
 }
-.card, .card.total{
-  transition: background 0.2s linear;
+.card.total p, .card.total span {
+  color: var(--white)
 }
-.card h3{
-  font-weight: bold;
-  font-size: 1rem;
+.card h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.card P {
-  font-size: 2rem;
-  line-height: 3rem;
-  margin-top: 1rem;
+
+.card p {
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin-top: 0.9375rem;
 }
-@media (min-width:800px){
- #balance{
+@media (min-width: 800px) {
+  .balance {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
   }
 }

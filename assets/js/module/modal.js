@@ -1,28 +1,26 @@
 export default function initModal() {
   const openModal = document.querySelector("[data-modal='open']");
   const closeModal = document.querySelector("[data-modal='close']");
-
-  const userEvent = ["click", "touchstart"]
-
+  const userEvent = ["click", "touchstart"];
   const toggleModal = {
-
     modal: document.querySelector("[data-modal='modal']"),
-    toggleModal(event) {
+    openModal(event) {
       event.preventDefault();
-      this.modal.classList.toggle("active");
+      this.modal.showModal();
     },
-  }
-  userEvent.forEach(event => {
-
-    openModal.addEventListener(event, event => {
-      toggleModal.toggleModal(event);
-    })
+    closeModal(event) {
+      event.preventDefault();
+      this.modal.close();
+    },
+  };
+  userEvent.forEach((event) => {
+    openModal.addEventListener(event, (event) => {
+      toggleModal.openModal(event);
+    });
   });
-
-  userEvent.forEach(event => {
-
-    closeModal.addEventListener(event, event => {
-      toggleModal.toggleModal(event);
-    })
+  userEvent.forEach((event) => {
+    closeModal.addEventListener(event, (event) => {
+      toggleModal.closeModal(event);
+    });
   });
 }

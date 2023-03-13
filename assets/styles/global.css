@@ -3,20 +3,101 @@
   margin: 0;
   padding: 0;
   font-size: 1rem;
+  color: var(--text-color);
 }
 :root {
-  --white: #fff;
-  --gray-100: #e1e1e6;
+  --bg-url-back: url(./../img/moon-stars.svg) ;
+   --bg-url-front: url(./../img/sun.svg);
+  --blue-700: #363f5f;
+  --gray-100: #f7f7f7;
+  --gray-200: #e1e1e6;
+  --gray-600: #323238;
+  --gray-800: #202024;
+  --gray-900: #121214;
+  --green-200: #3dd705;
+  --green-300:#49aa26;
+  --green-500: #005a34;
+  --green-700: #2d4a22;
+  --whatsapp: #34af23;
+  --linkedin: #0e76a8;
+  --github: #171515;
+  --red-500: #e92929;
+  --white: #ffffff;
+  --white-2: #faf8ff;
+  
+}
+.light{
+  --bg-button: black;
+  --bg-body: var(--gray-100);
+  --bg-card: var(--white);
+  --bg-header: var(--green-500);
+  --box-shadow: 0px 1.9px 3px  rgba(0, 0, 0, 0.699),
+    0 1.5px 2px rgba(0, 0, 0, 0.644);
+  --box-shadow-total:  0px 1.9px 3px  rgba(0, 0, 0, 0.699),
+    0 1.5px 2px rgba(0, 0, 0, 0.644);
+  --text-color: var(--blue-700);
+}
+.dark {
+ --bg-button: white;
+  --bg-body: var(--gray-600);
+  --bg-card: var(--gray-900);
+  --bg-header: var(--gray-800);
+  --box-shadow: 1px 1.9px 0px 3px rgba(42, 250, 0, 0.699),
+    0 1.5px 2px rgba(0, 0, 0, 0.644);
+  --box-shadow-total: 1px 1.9px 0px 3px rgb(243, 242, 242),
+    0 1.5px 2px rgb(54, 54, 54);
+  --text-color: var(--gray-200);
+}
+
+html {
+  font-size: 87.5%;
+}
+body {
+  background: var(--bg-body);
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  transition: background-color 600ms ease-in-out;
+}
+button{
+  background: transparent;
+  border: none;
+}
+.container {
+  width: min(90vw, 53rem);
+  margin: auto;
+}
+.sr-only {
+  position: absolute;
+  left: 0;
+  top: -500px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+@media (min-width:800px){
+  html{
+    font-size: 100%;
+  }
+}
+/*
+  #005A34
+  #ACA7CB
+  #3B3B3B
+  #F3F3F3
+  #F3F3F3
+  #E0D3E4
+  #FAF8FF
+    --white: #fff;
+  
   --gray-200:#f0f2f5;
   --gray-300: #c4c4cc;
   --gray-400: #8d8d99;
   --gray-600: #323238;
-  --gray-900: #121214;
+  
   --gray-700: #29292e;
-  --gray-800: #202024;
-  --blue-700: #363f5f;
-  --green-200: #3dd705;
-  --green-400: #49aa26;
+  
+  
+ 
   --green-700: #2d4a22;
   
   --bg-header: var(--green-700);
@@ -25,35 +106,4 @@
   --card-bg: var(--white);
   --card-bg-total: var(--green-400);
   --bg-table-content: var(--white);
-}
-html {
-  font-size: 93.75%;
-}
-body {
-  background-color: var(--bg-body);
-  font-family: "Poppins", sans-serif;
-  color: var(--text-color);
-  transition: background 0.2s linear;
-}
-a{
-  text-decoration: none;
-}
-.container {
-  margin: 0 auto;
-  width: min(90vw, 850px);
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1;
-  overflow: hidden;
-  clip: rect(0, 0, 0);
-}
-@media (min-width:800px){
-  html{
-    font-size: 87.5%;
-  }
-}
+  */
