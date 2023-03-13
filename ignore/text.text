@@ -1,0 +1,28 @@
+/*
+  #005A34
+  #ACA7CB
+  #3B3B3B
+  #F3F3F3
+  #F3F3F3
+  #E0D3E4
+  #FAF8FF
+    --white: #fff;
+  
+  --gray-200:#f0f2f5;
+  --gray-300: #c4c4cc;
+  --gray-400: #8d8d99;
+  --gray-600: #323238;
+  
+  --gray-700: #29292e;
+  
+  
+ 
+  --green-700: #2d4a22;
+  
+  --bg-header: var(--green-700);
+  --bg-body: var(--gray-200);
+  --text-color: var(--blue-700);
+  --card-bg: var(--white);
+  --card-bg-total: var(--green-400);
+  --bg-table-content: var(--white);
+  */
