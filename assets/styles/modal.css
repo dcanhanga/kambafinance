@@ -43,6 +43,7 @@
   height: 52px;
   color: white;
   border: solid 1px var(--bg-button);
+  cursor: pointer;
 }
 .input-buttons button {
   background: var(--green-200);
