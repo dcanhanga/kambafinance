@@ -1,0 +1,117 @@
+footer p {
+  text-align: center;
+  padding: 1.5rem;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+address {
+  padding: 1.5rem;
+}
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+li {
+  border: 1px solid white;
+  padding: 0.89rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.contact li {
+  color: var(--white);
+}
+.contact a,
+.contact a i {
+  color: inherit;
+}
+.contact a i {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.github {
+  background-color: var(--github);
+}
+.linkedin {
+  background-color: var(--linkedin);
+}
+.phone {
+  background-color: var(--phone);
+}
+.whtasapp {
+  background-color: var(--whatsapp);
+}
+@media (min-width: 800px) {
+  .github {
+    border: solid 1px var(--github);
+  }
+  .linkedin {
+    border: solid 1px var(--linkedin);
+  }
+    .phone {
+    border: solid 1px var(--phone);
+  }
+    .whtasapp {
+    border: solid 1px var(--whatsapp);
+  }
+  .github,
+  .linkedin,
+  .whtasapp,
+  .phone {
+    background-color: transparent;
+    transition: all 0.5s linear;
+  }
+    .github:hover {
+    background-color: var(--github);
+  }
+  
+  .linkedin:hover {
+    background-color: var(--linkedin);
+  }
+
+  .phone:hover {
+    background-color: var(--phone);
+  }
+
+  .whtasapp:hover {
+    background-color: var(--whatsapp);
+  }
+
+  .github:hover,
+  .linkedin:hover,
+  .whtasapp:hover,
+  .phone:hover {
+    border: solid 1px var(--white);
+    transition: all 0.5s linear;
+  }
+  .github a i {
+    color: var(--github);
+  }
+  .linkedin a i {
+    color: var(--linkedin);
+  }
+  .phone a i {
+    color: var(--phone);
+  }
+  .whtasapp a i {
+    color: var(--whatsapp);
+  }
+  .github a i,
+  .linkedin a i,
+  .whtasapp a i,
+  .phone a i {
+    transition: color 0.5s linear;
+  }
+  .github:hover a i,
+  .linkedin:hover a i,
+  .whtasapp:hover a i,
+  .phone:hover a i {
+    color: var(--white);
+    transition: color 0.5s linear;
+  }
+}
