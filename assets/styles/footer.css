@@ -52,16 +52,29 @@ address {
      border: solid 1px var(--white);
   }
   .github a{
-    border: solid 1px var(--github);
-  }
+  border-color: var(--github);
+  color: var(--github);
+}
 .github a:hover{
   background-color: var(--github);
+}
+.linkedin a{
+  border-color: var(--linkedin);
+  color: var(--linkedin);
 }
 .linkedin a:hover{
    background-color: var(--linkedin);
 }
+.phone a{
+  border-color: var(--phone);
+  color: var(--phone);
+}
 .phone a:hover{
    background-color: var(--phone);
+}
+.whtasapp a{
+  border-color: var(--whatsapp);
+  color: var(--whatsapp);
 }
 .whtasapp a:hover{
    background-color: var(--whatsapp);
