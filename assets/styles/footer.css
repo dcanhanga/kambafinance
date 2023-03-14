@@ -1,13 +1,10 @@
-footer p {
-  text-align: center;
-  padding: 1.5rem;
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-ul {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-}
+.kambadev,
 address {
   padding: 1.5rem;
 }
@@ -15,103 +12,64 @@ address {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.3rem;
 }
-li {
-  border: 1px solid white;
-  padding: 0.89rem;
+.contact a {
+  border: 1px solid var(--white);
   border-radius: 50%;
-  cursor: pointer;
-}
-.contact li {
+  display: inline-block;
+  padding: 1rem;
   color: var(--white);
+
 }
-.contact a,
 .contact a i {
   color: inherit;
-}
-.contact a i {
   font-size: 1.8rem;
   font-weight: bold;
 }
-.github {
+.github a {
   background-color: var(--github);
+  
 }
-.linkedin {
+.linkedin a {
   background-color: var(--linkedin);
+ 
 }
-.phone {
+.phone a {
   background-color: var(--phone);
 }
-.whtasapp {
+.whtasapp a {
   background-color: var(--whatsapp);
+  
 }
+
 @media (min-width: 800px) {
-  .github {
+  .contact a{
+    background-color: transparent;
+  }
+  .contact a:hover {
+    color:var(--white);
+     border: solid 1px var(--white);
+  }
+  .github a{
     border: solid 1px var(--github);
   }
-  .linkedin {
-    border: solid 1px var(--linkedin);
-  }
-    .phone {
-    border: solid 1px var(--phone);
-  }
-    .whtasapp {
-    border: solid 1px var(--whatsapp);
-  }
-  .github,
-  .linkedin,
-  .whtasapp,
-  .phone {
-    background-color: transparent;
-    transition: all 0.5s linear;
-  }
-    .github:hover {
-    background-color: var(--github);
-  }
-  
-  .linkedin:hover {
-    background-color: var(--linkedin);
-  }
-
-  .phone:hover {
-    background-color: var(--phone);
-  }
-
-  .whtasapp:hover {
-    background-color: var(--whatsapp);
-  }
-
-  .github:hover,
-  .linkedin:hover,
-  .whtasapp:hover,
-  .phone:hover {
-    border: solid 1px var(--white);
-    transition: all 0.5s linear;
-  }
-  .github a i {
-    color: var(--github);
-  }
-  .linkedin a i {
-    color: var(--linkedin);
-  }
-  .phone a i {
-    color: var(--phone);
-  }
-  .whtasapp a i {
-    color: var(--whatsapp);
-  }
-  .github a i,
-  .linkedin a i,
-  .whtasapp a i,
-  .phone a i {
-    transition: color 0.5s linear;
-  }
-  .github:hover a i,
-  .linkedin:hover a i,
-  .whtasapp:hover a i,
-  .phone:hover a i {
-    color: var(--white);
-    transition: color 0.5s linear;
-  }
+.github a:hover{
+  background-color: var(--github);
+}
+.linkedin a:hover{
+   background-color: var(--linkedin);
+}
+.phone a:hover{
+   background-color: var(--phone);
+}
+.whtasapp a:hover{
+   background-color: var(--whatsapp);
+}
+.contact{
+  gap:2.5rem;
+}
+.contact a, .contact a:hover{
+ transition: all 600ms linear;
+}
 }
