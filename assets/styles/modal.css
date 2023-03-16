@@ -1,12 +1,15 @@
 .modal {
   border: none;
   margin: auto auto;
-  padding: auto;
+  width: min(90%, 580px);
+}
+.modal::backdrop{
   background-color: rgba(0, 0, 0, 0.295);
 }
 .modal-container {
   background: var(--bg-body);
   padding: 2rem;
+  
 }
 .modal-container h2 {
   font-size: 22.5px;
@@ -23,27 +26,52 @@
   border: none;
   padding: 12px;
   width: 100%;
-  border-radius: 4px;
+  border-radius: 5px;
   font-weight: bold
 }
-.input-group em {
-  display: block;
-  margin: 1rem;
-  font-size: 0.75rem;
+.radio-inputs, .input-buttons {
+display: flex;
+justify-content: space-evenly;
+align-items: center;
 }
 
-.input-buttons {
-  margin-top: 1rem;
+.radio-inputs label {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 50px;
+  border: solid 1px var(--bg-button);
+  border-radius: 8px;
+
 }
+.expense-radio label,
+.income-radio label {
+ color:white;
+  transition: all 600ms ease-in-out;
+}
+.expense-radio label{
+  background-color:  rgba(233, 41, 41, 0.3);
+}
+.expense-radio input:checked+label {
+   background-color:  var(--red-500);
+}
+.income-radio label{
+  background-color:  rgba(61, 215, 5, 0.3);
+}
+.income-radio input:checked+label{
+  background-color: var(--green-200);
+   transition: all 600ms ease-in-out;
+}
+
 .input-buttons .cancel,
 .input-buttons button {
-  width: 48%;
+  width: 38%;
   height: 52px;
   color: white;
   border: solid 1px var(--bg-button);
   cursor: pointer;
+   border-radius: 8px;
 }
 .input-buttons button {
   background: var(--green-200);
@@ -53,29 +81,37 @@
   align-items: center;
   justify-content: center;
   background: var(--red-500);
+ 
 }
+
 @media (min-width: 800px) {
+  .income-radio label,
+  .expense-radio label,
   .input-buttons button,
   .input-buttons .cancel {
     background: transparent;
-    border: 1px solid white;
     transition: all 600ms ease-in-out;
   }
+  .income-radio label,
   .input-buttons button {
-    background: transparent;
     border: 1px solid var(--green-200);
     color: var(--green-200);
-  }
+  }  
+   .income-radio input:hover+label,
+   .income-radio input:checked+label,
   .input-buttons button:hover {
     background: var(--green-200);
     border: 1px solid var(--bg-button);
     color: white;
   }
+ 
+  .expense-radio label,
   .input-buttons .cancel {
-    background: transparent;
     border: 1px solid var(--red-500);
     color: var(--red-500);
   }
+   .expense-radio input:hover+label,
+   .expense-radio input:checked+label,
   .input-buttons .cancel:hover {
     background: var(--red-500);
     border: 1px solid var(--bg-button);

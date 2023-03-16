@@ -91,26 +91,41 @@
   </main>
   <dialog class="modal" data-modal="modal">
     <div class="modal-container">
-      <h2>Nova Transação</h2>
       <form>
-        <div class="input-group">
-          <label for="description" class="sr-only">Descrição</label>
-          <input type="text" placeholder="Descrição da transação" required id="description" data-form="description">
-        </div>
-        <div class="input-group">
-          <label for="amount" class="sr-only">Valor</label>
-          <input type="number" placeholder="Valor da transação, use o sinal (-) para despesas" required id="amount"
-            data-form="amount" step="0.5">
-          <em>Use o sinal - (negativo) para despesas e ,use a (virgula) para as casas decimais</em>
-        </div>
-        <div class="input-group">
-          <label for="date" class="sr-only">Data</label>
-          <input type="date" required id="date" data-form="date">
-        </div>
-        <div class="input-buttons">
-          <span class="cancel" title="Cancelar" data-modal="close">Cancelar</span>
-          <button type="submit">Salvar</button>
-        </div>
+        <fieldset>
+          <legend>
+            <h2>Nova Transação</h2>
+          </legend>
+          <div class="input-group">
+            <label for="description" class="sr-only">Descrição</label>
+            <input type="text" placeholder="Descrição da transação" required id="description" data-form="description">
+          </div>
+          <div class="input-group">
+            <label for="amount" class="sr-only">Valor</label>
+            <input type="number" placeholder="Valor da transação" required id="amount"
+              data-form="amount" step="0.5">
+          </div>
+          <div class="radio-inputs input-group">
+            
+            <div class="expense-radio">
+              <input type="radio" name="transaction-type" value="expense" id="expense" class="sr-only" required>
+              <label for="expense">Saídas</label>
+            </div>
+            <div class="income-radio">
+              <input type="radio" name="transaction-type" value="income" id="income" class="sr-only" required>
+              <label for="income">Entradas</label>
+            </div>
+            
+          </div>
+          <div class="input-group">
+            <label for="date" class="sr-only">Data</label>
+            <input type="date" required id="date" data-form="date">
+          </div>
+          <div class="input-buttons input-group" >
+            <span class="cancel" title="Cancelar" data-modal="close">Cancelar</span>
+            <button type="submit">Salvar</button>
+          </div>
+        </fieldset>
       </form>
     </div>
   </dialog>

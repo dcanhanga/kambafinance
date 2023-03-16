@@ -25,8 +25,7 @@
   --red-500: #e92929;
   --white: #ffffff;
   --white-2: #faf8ff;
-}
-.light {
+
   --bg-button: black;
   --bg-body: var(--gray-100);
   --bg-card: var(--white);
@@ -37,6 +36,7 @@
     0 1.5px 2px rgba(253, 206, 206, 0.699);
   --text-color: var(--blue-700);
 }
+
 .dark {
   --bg-button: white;
   --bg-body: var(--gray-600);
@@ -61,11 +61,15 @@ body {
 button {
   background: transparent;
   border: none;
-}ul {
+}
+ul {
   list-style: none;
 }
 a {
   text-decoration: none;
+}
+fieldset{
+  border:none;
 }
 .container {
   width: min(90vw, 53rem);
