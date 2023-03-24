@@ -59,60 +59,56 @@
               <th></th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>Crianção de WebSite</td>
-              <td class="income">150 000,00 Kz</td>
-              <td>12/09/03</td>
-              <td><img src="./assets/img/minus.svg" alt="Remover transação" title="Remover transação"></td>
-            </tr>
-            <tr>
-              <td>Internet</td>
-              <td class="expense">27 000,00 Kz</td>
-              <td>15/09/03</td>
-              <td><img src="./assets/img/minus.svg" alt="Remover transação" title="Remover transação"></td>
-            </tr>
-            <tr>
-              <td>Agua</td>
-              <td class="expense">10 000,00 Kz</td>
-              <td>15/09/03</td>
-              <td><img src="./assets/img/minus.svg" alt="Remover transação" title="Remover transação"></td>
-            </tr>
-            <tr>
-              <td>Energia</td>
-              <td class="expense">13 000,00 Kz</td>
-              <td>15/09/03</td>
-              <td><img src="./assets/img/minus.svg" alt="Remover transação" title="Remover transação"></td>
-            </tr>
-          </tbody>
+          <tbody data-transactionTable="tbody"></tbody>
         </table>
       </div>
     </section>
   </main>
   <dialog class="modal" data-modal="modal">
     <div class="modal-container">
-      <form>
+      <form data-form="form">
         <fieldset>
           <legend>
             <h2>Nova Transação</h2>
           </legend>
           <div class="input-group">
             <label for="description" class="sr-only">Descrição</label>
-            <input type="text" placeholder="Descrição da transação" required id="description" data-form="description">
+            <input type="text" 
+              placeholder="Descrição da transação" 
+              required 
+              id="description" 
+              data-form="description"
+            >
           </div>
           <div class="input-group">
             <label for="amount" class="sr-only">Valor</label>
-            <input type="number" placeholder="Valor da transação" required id="amount"
-              data-form="amount" step="0.5">
+            <input type="number" 
+              placeholder="Valor da transação" 
+              required 
+              id="amount"
+              data-form="amount" step="0.5"
+            >
           </div>
           <div class="radio-inputs input-group">
             
             <div class="expense-radio">
-              <input type="radio" name="transaction-type" value="expense" id="expense" class="sr-only" required>
+              <input type="radio" 
+                name="transaction-type" 
+                value="expense" id="expense" 
+                data-form="transaction-type" 
+                class="sr-only" 
+                required
+              >
               <label for="expense">Saídas</label>
             </div>
             <div class="income-radio">
-              <input type="radio" name="transaction-type" value="income" id="income" class="sr-only" required>
+              <input type="radio" 
+                name="transaction-type" 
+                value="income" id="income" 
+                data-form="transaction-type" 
+                class="sr-only" 
+                required
+              >
               <label for="income">Entradas</label>
             </div>
             

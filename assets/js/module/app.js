@@ -1,45 +1,95 @@
 export default function initApp() {
-  let transactions = [];
   const form = {
-    transactionDescriptionField: document.querySelector(
-      "[data-transaction='description']"
+    form: document.querySelector("[data-form='form']"),
+    inDescription: document.querySelector("[data-form='description']"),
+    inAmount: document.querySelector("[data-form='amount']"),
+    transactionTypeRadioEls: document.querySelectorAll("[data-form='transaction-type'][name='transaction-type']"
     ),
-    transactionAmountField: document.querySelector(
-      "[data-transaction='amount']"
-    ),
-    transactionDateField: document.querySelector("[data-transaction='date']"),
-    modal: document.querySelector("[data-modal='modal']"),
-    GateValue(description, amount, date) {
+    inDate: document.querySelector("[data-form='date']"),
+
+    gateValue() {
+      const { inDescription, inAmount, inDate } = this;
+      const selectedTransactionTypeRadioEl = [
+        ...form.transactionTypeRadioEls,
+      ].find((radio) => radio.checked);
       return {
-        id: this.transactions.length + 1,
-        transactionDescription: description.value,
-        transactionAmount: amount.value,
-        transactionDate: date.value,
+        description: inDescription.value,
+        amount: inAmount.value,
+        transactionType: selectedTransactionTypeRadioEl.value,
+        date: inDate.value,
       };
-    },
-    validateField() {
-      const { transactionDescription, transactionAmount, transactionDate } =
-        this.GateValue();
-      if (
-        transactionDescription.trim() === '' ||
-        transactionAmount.trim() === '' ||
-        transactionDate.trim() === ''
-      ) {
-        throw new Error('alert');
-      }
-    },
-    submit(event) {
-      event.preventDefault();
-      try {
-        this.validateField();
-      } catch (error) {
-        alert(error.massage);
-      }
-      //Verificar se todas as informações foram preenchidas
     },
   };
 
-  // formatar os dados para salvar
-  // limpar os feilds dos formularios
-  // atualizar aplicação
+  form.form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    console.log(form.gateValue());
+  });
+
+  /*
+  const AllTransactions = [];
+  const utilities = {
+    formatAmount() {},
+  };
+
+  /*
+
+  const dom = {
+    createTr(transaction) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = this.contentTr(transaction);
+      return tr;
+    },
+    contentTr(transaction) {
+      const amount = transaction.amount;
+      const contentTr = ` <td>Crianção de WebSite</td>
+              <td class="income">${amount},00 Kz</td>
+              <td>12/09/03</td>
+              <td><img src="./assets/img/minus.svg" alt="Remover transação" title="Remover transação"></td>`;
+      return contentTr;
+    },
+
+    addTransactionIntoDom(transaction) {
+      const tbody = document.querySelectorAll(
+        "[data-transactionTable='tbody']"
+      );
+      const tr = this.createTr(transaction);
+      tbody.appendChild(tr);
+    },
+  };
+
+  const tbody = document.querySelectorAll(
+        "[data-transactionTable='tbody']"
+      );
+     tbody.appendClield()
+  dom.addTransactionIntoDom();
+
+  */
 }
+/*
+const form = {
+  formEl: document.querySelector("[data-form='form']"),
+  descriptionInputEl: document.querySelector("[data-form='description']"),
+  amountInputEl: document.querySelector("[data-form='amount']"),
+  transactionTypeRadioEls: document.querySelectorAll("[data-form='transaction-type'][name='transaction-type']"),
+  dateInputEl: document.querySelector("[data-form='date']"),
+
+  getFormData() {
+    const selectedTransactionTypeRadioEl = [...form.transactionTypeRadioEls].find(radio => radio.checked);
+    return {
+      description: form.descriptionInputEl.value,
+      amount: form.amountInputEl.value,
+      transactionType: selectedTransactionTypeRadioEl.value,
+      date: form.dateInputEl.value,
+    };
+  }
+};
+
+form.formEl.addEventListener("submit", (event) => {
+  event.preventDefault();
+  console.log(form.getFormData());
+});
+
+
+
+*/
