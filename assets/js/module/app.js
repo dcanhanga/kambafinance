@@ -1,32 +1,43 @@
 export default function initApp() {
-  const form = {
-    form: document.querySelector("[data-form='form']"),
-    inDescription: document.querySelector("[data-form='description']"),
-    inAmount: document.querySelector("[data-form='amount']"),
-    transactionTypeRadioEls: document.querySelectorAll("[data-form='transaction-type'][name='transaction-type']"
-    ),
-    inDate: document.querySelector("[data-form='date']"),
+	const form = {
+		form: document.querySelector("[data-form='form']"),
+		inDescription: document.querySelector("[data-form='description']"),
+		inAmount: document.querySelector("[data-form='amount']"),
+		inTransactionTypeRadioEls: document.querySelectorAll(
+			"[data-form='transaction-type'][name='transaction-type']"
+		),
+		inDate: document.querySelector("[data-form='date']"),
 
-    gateValue() {
-      const { inDescription, inAmount, inDate } = this;
-      const selectedTransactionTypeRadioEl = [
-        ...form.transactionTypeRadioEls,
-      ].find((radio) => radio.checked);
-      return {
-        description: inDescription.value,
-        amount: inAmount.value,
-        transactionType: selectedTransactionTypeRadioEl.value,
-        date: inDate.value,
-      };
-    },
-  };
+		getFormData() {
+			const { inDescription, inAmount, inDate } = this;
+			const selectedTransactionTypeRadioEl = [
+				...form.inTransactionTypeRadioEls,
+			].find((radio) => radio.checked);
+			return {
+				description: inDescription.value,
+				amount: utilities.formatAmountToCurrency(inAmount.value),
+				transactionType: selectedTransactionTypeRadioEl.value,
+				date: inDate.value,
+			};
+		},
+	};
 
-  form.form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    console.log(form.gateValue());
-  });
+	const utilities = {
+		formatAmountToCurrency(amount) {
+			let amountFormatted = Number(amount).toLocaleString("pt-AO", {
+				style: "currency",
+				currency: "AOA",
+				minimumFractionDigits: 2,
+			});
+			return amountFormatted;
+		},
+	};
+	form.form.addEventListener("submit", (event) => {
+		event.preventDefault();
+		console.log(form.getFormData());
+	});
 
-  /*
+	/*
   const AllTransactions = [];
   const utilities = {
     formatAmount() {},
@@ -89,7 +100,5 @@ form.formEl.addEventListener("submit", (event) => {
   event.preventDefault();
   console.log(form.getFormData());
 });
-
-
 
 */
