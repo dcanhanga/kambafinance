@@ -120,10 +120,7 @@ const Utils = {
         return value
     },
 
-    formatDate(date) {
-        const splittedDate = date.split("-")
-        return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
-    },
+  
 
     formatCurrency(value) {
         const signal = Number(value) < 0 ? "-" : ""
@@ -217,48 +214,7 @@ App.init()
 
 
 
-const form = {
-		form: document.querySelector("[data-form='form']"),
-		inDescription: document.querySelector("[data-form='description']"),
-		inAmount: document.querySelector("[data-form='amount']"),
-		inTransactionTypeRadioEls: document.querySelectorAll(
-			"[data-form='transaction-type'][name='transaction-type']"
-		),
-		inDate: document.querySelector("[data-form='date']"),
 
-		getFormData() {
-			const { inDescription, inAmount, inDate } = this;
-			const selectedTransactionTypeRadioEl = [
-				...form.inTransactionTypeRadioEls,
-			].find((radio) => radio.checked);
-      const generateID = () => Math.round(Math.random() *100);
-			return {
-        id: generateID(),
-				description: inDescription.value,
-				amount: utilities.formatCurrency(inAmount.value),
-				transactionType: selectedTransactionTypeRadioEl.value,
-				date: inDate.value,
-			};
-		},
-	};
-
-	
-
-
-
-
-
-
-
-
-
-
-
-	form.form.addEventListener("submit", (event) => {
-		event.preventDefault();
-    transactions.add(form.getFormData());
-    storage.setToLocaleStorage(transactions.add(form.getFormData()));
-	});
 
 	
   /*
