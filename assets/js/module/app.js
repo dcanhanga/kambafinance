@@ -25,10 +25,23 @@ export default function initApp() {
 		],
 		incomes() {
 			const income = this.all
-				.filter(item => item.transactionType === "incomes")
-				.map(item => utilities.formatAmount(item.amount));
+				.filter((item) => item.transactionType === "incomes")
+				.map((item) => utilities.formatAmount(item.amount))
+				.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 			return income;
 		},
+
+		expenses() {
+			const expense = this.all
+				.filter((item) => item.transactionType === "expenses")
+				.map((item) => utilities.formatAmount(item.amount))
+				.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+			return expense*(-1);
+		},
+
+		total(){
+			return this.incomes() + this.expenses()
+		}
 	};
 	const dom = {
 		tbody: document.querySelector("[data-transactionTable='tbody']"),
@@ -62,7 +75,7 @@ export default function initApp() {
 		},
 
 		formatAmount(amount) {
-			const amountFormatted = Number(amount.replace(/\D/g, "")) /100; ;
+			const amountFormatted = Number(amount.replace(/\D/g, "")) / 100;
 			return amountFormatted;
 		},
 	};
@@ -70,5 +83,6 @@ export default function initApp() {
 		dom.addTransactionIntoDom(transaction);
 	});
 	console.log(transactions.incomes());
-	console.log(utilities.formatAmount("120 000,00 KZ"));
+	console.log(transactions.expenses());
+	console.log(transactions.total());
 }
