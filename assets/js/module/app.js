@@ -1,27 +1,35 @@
 export default function initApp() {
-	const transactions = [
-		{
-			id: 1,
-			description: "Criação de WebSite",
-			amount: "120 000,00 KZ",
-			transactionType: "incomes",
-			date: "2015-04-06",
+	const transactions = {
+		all: [
+			{
+				id: 1,
+				description: "Criação de WebSite",
+				amount: "120 000,00 KZ",
+				transactionType: "incomes",
+				date: "2015-04-06",
+			},
+			{
+				id: 2,
+				description: "Luz",
+				amount: "6000,00 KZ",
+				transactionType: "expenses",
+				date: "2015-04-06",
+			},
+			{
+				id: 3,
+				description: "Água",
+				amount: "6000,00 KZ",
+				transactionType: "expenses",
+				date: "2015-04-06",
+			},
+		],
+		incomes() {
+			const income = this.all
+				.filter(item => item.transactionType === "incomes")
+				.map(item => utilities.formatAmount(item.amount));
+			return income;
 		},
-		{
-			id: 2,
-			description: "Luz",
-			amount: "6000,00 KZ",
-			transactionType: "expenses",
-			date: "2015-04-06",
-		},
-		{
-			id: 3,
-			description: "Água",
-			amount: "6000,00 KZ",
-			transactionType: "expenses",
-			date: "2015-04-06",
-		},
-	];
+	};
 	const dom = {
 		tbody: document.querySelector("[data-transactionTable='tbody']"),
 		addTransactionIntoDom(transaction) {
@@ -54,9 +62,13 @@ export default function initApp() {
 		},
 
 		formatAmount(amount) {
-			const amountFormatted = Number(amount.replace(/\,\./g, "")) / 100;
+			const amountFormatted = Number(amount.replace(/\D/g, "")) /100; ;
 			return amountFormatted;
 		},
 	};
-	transactions.forEach(transaction => { dom.addTransactionIntoDom(transaction)} )
+	transactions.all.forEach((transaction) => {
+		dom.addTransactionIntoDom(transaction);
+	});
+	console.log(transactions.incomes());
+	console.log(utilities.formatAmount("120 000,00 KZ"));
 }
