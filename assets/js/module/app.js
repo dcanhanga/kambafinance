@@ -36,12 +36,12 @@ export default function initApp() {
 				.filter((item) => item.transactionType === "expenses")
 				.map((item) => utilities.formatAmount(item.amount))
 				.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-			return expense*(-1);
+			return expense * -1;
 		},
 
-		total(){
-			return this.incomes() + this.expenses()
-		}
+		total() {
+			return this.incomes() + this.expenses();
+		},
 	};
 	const dom = {
 		tbody: document.querySelector("[data-transactionTable='tbody']"),
@@ -63,6 +63,14 @@ export default function initApp() {
               <td><img src="./assets/img/minus.svg" alt="Remover transação" title="Remover transação"></td>`;
 			return contentTr;
 		},
+		upDateBalance() {
+			document.querySelector("[data-display='incomes']").innerHTML =
+				utilities.formatCurrency(transactions.incomes());
+			document.querySelector("[data-display='expenses']").innerHTML =
+				utilities.formatCurrency(transactions.expenses());
+			document.querySelector("[data-display='total']").innerHTML =
+				utilities.formatCurrency(transactions.total());
+		},
 	};
 	const utilities = {
 		formatCurrency(amount) {
@@ -79,10 +87,17 @@ export default function initApp() {
 			return amountFormatted;
 		},
 	};
-	transactions.all.forEach((transaction) => {
-		dom.addTransactionIntoDom(transaction);
-	});
-	console.log(transactions.incomes());
-	console.log(transactions.expenses());
-	console.log(transactions.total());
+
+	const App = {
+		init() {
+			transactions.all.forEach((transaction) => {
+				dom.addTransactionIntoDom(transaction);
+			});
+
+			dom.upDateBalance();
+		},
+		
+	};
+
+	App.init();
 }

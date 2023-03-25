@@ -22,5 +22,5 @@ export default function initModal() {
     closeModal.addEventListener(event, (event) => {
       toggleModal.closeModal(event);
     });
-  });
+  }); 
 }
