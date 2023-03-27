@@ -9,10 +9,9 @@
 - [🚀 Tecnologias](#🚀-tecnologias)
 
 
-
 <br><br><br>
 ---
-<h2 align="center"> <a href="(https://kambafinance.vercel.app">Demostração do projeto kamba.finance.AOA  </a> </h2><br><br>
+<h2 align="center"> <a href="https://kambafinance.vercel.app">Demostração do projeto kamba.finance.AOA</a> </h2><br><br>
  <div align="center">
 <img src="./.github/kambafinancedesktop.gif">
  </div>
