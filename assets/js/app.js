@@ -16,8 +16,8 @@ const transactions = {
 		this.all.push(transaction);
 		App.reload();
 	},
-	remove(index) {
-		this.all.splice(index, 1);
+	remove(ID) {
+		this.all = this.all.filter(transaction => transaction.id !== ID)
 		App.reload();
 	},
 	incomes() {
@@ -45,23 +45,22 @@ const transactions = {
 };
 const dom = {
 	tbody: document.querySelector("[data-transactionTable='tbody']"),
-	addTransactionIntoDom(transaction, index) {
-		this.tbody.appendChild(this.createTr(transaction, index));
+	addTransactionIntoDom(transaction) {
+		this.tbody.appendChild(this.createTr(transaction));
 	},
-	createTr(transaction, index) {
+	createTr(transaction) {
 		const tr = document.createElement("tr");
-		tr.innerHTML = this.contentTr(transaction, index);
-		tr.dataset.index = index;
+		tr.innerHTML = this.contentTr(transaction);
 		return tr;
 	},
-	contentTr(transaction, index) {
+	contentTr(transaction) {
 		const cssClass =
 			transaction.transactionType === "incomes" ? "income" : "expense";
 		const signal = transaction.transactionType === "incomes" ? "" : "-";
 		const contentTr = ` <td>${transaction.description}</td>
               <td class="${cssClass}">${signal}${transaction.amount}</td>
               <td>${transaction.date}</td>
-              <td><img onclick="transactions.remove(${index})" src="./assets/img/minus.svg" alt="Remover transação" title="Remover transação"></td>`;
+              <td><img onclick="transactions.remove(${transaction.id})" src="./assets/img/minus.svg" alt="Remover transação" title="Remover transação"></td>`;
 		return contentTr;
 	},
 	upDateBalance() {
@@ -156,11 +155,11 @@ form.form.addEventListener("submit", (event) => {
 });
 const App = {
 	init() {
-		transactions.all.forEach((transaction, index) => {
-			dom.addTransactionIntoDom(transaction, index);
-      storage.set(transactions.all);
+		transactions.all.forEach((transaction) => {
+			dom.addTransactionIntoDom(transaction);
+     
 		});
-    
+     storage.set(transactions.all);
 		dom.upDateBalance();
 	},
 	reload() {
