@@ -49,10 +49,4 @@
 .income {
   color: var(--green-200);
 }
-@media (min-width: 800px) {
 
-.filter-container{
-  margin-left: 80px;
-  flex: 1 1 300px;
-}
-}
