@@ -4,28 +4,7 @@
   transition: color 0.5s linear;
   margin-bottom: 0.7rem;
 }
-.transactions-new-filter {
-  display: flex;
-  column-gap: 2rem;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.filter-container{
-  flex: 1 1 800px;
-}
 
-.transactions-new-filter input#filter{ 
-  display: block;
-  width:100%;
-  text-indent: 12px;
-  background: var(--bg-card);
-  outline: 0;
-  border: none;
-  padding: 12px;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: color 0.5s linear;
-}
 .transactions button:hover {
   color: var(--green-200);
   transition: color 0.5s linear;
