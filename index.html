@@ -46,8 +46,12 @@
       </div>
     </section>
     <section class="transactions">
-      <h2 class="sr-only">Transações</h2>
-      <label for="new-transaction" class="sr-only">Nova Transação</label>
+          <div>
+          <label for="new-transaction" class="sr-only">Nova Transação</label>
+          <button id="new-transaction" data-modal="open">+ Nova Transação</button>
+        </div>
+        <div class="filter-container"><input type="text" name="filter" id="filter" placeholder="Procura por transação"></div>
+      </div>
       <button id="new-transaction" data-modal="open">+ Nova Transação</button>
       <div class="transactions-table-container">
         <table class="transactions-table">
